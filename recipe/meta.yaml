@@ -9,13 +9,16 @@ source:
   path: .
 
 build:
-  string: 0_llvm
-  skip: true  # [not (linux64 or ppc64le)]
+  string: 1_llvm
+  skip: true  # [not linux]
   always_include_files:
     # this major version has to match the libgomp version from gcc
     - lib/libgomp.so.1
-  track_features:
-    - llvm_openmp
+  # Remove track_features because directly depending on mutex=*=*llvm
+  # would make the downstream package have low priority
+  # For eg: newer blas packages are not used by the solver
+  # track_features:
+  #  - llvm_openmp
   ignore_run_exports:
     - _openmp_mutex
   run_exports:
