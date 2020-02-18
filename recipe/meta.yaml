@@ -1,5 +1,6 @@
 {% set name = "_openmp_mutex" %}
 {% set version = "4.5" %}
+{% set build = "1" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +10,8 @@ source:
   path: .
 
 build:
-  string: 1_llvm
+  number: {{ build }}
+  string: {{ build }}_llvm
   skip: true  # [not linux]
   always_include_files:
     # this major version has to match the libgomp version from gcc
