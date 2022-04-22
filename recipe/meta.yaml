@@ -11,7 +11,7 @@ source:
 
 build:
   number: {{ build }}
-  string: {{ build }}_llvm
+  string: {{ build }}_kmp_llvm
   skip: true  # [not linux]
   always_include_files:
     # this major version has to match the libgomp version from gcc
