@@ -28,7 +28,6 @@ build:
 
 requirements:
   host:
-    - llvm-openmp >=9.0.1
   run:
     - llvm-openmp >=9.0.1
     - _libgcc_mutex {{ _libgcc_mutex }}  # [linux64 or ppc64le]
